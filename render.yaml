@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: irctc-automation
+    env: node
+    buildCommand: npm install && pip install -r irctc-captcha-solver/requirements.txt
+    startCommand: npm run start-booking
+    envVars:
+      - key: USERNAME
+        sync: false
+      - key: PASSWORD
+        sync: false
+    autoDeploy: true 
